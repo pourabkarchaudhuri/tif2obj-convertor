@@ -44,7 +44,7 @@ def next_slice(ax):
     ax.images[0].set_array(volume[ax.index])
 
 # Read the file
-struct_arr = io.imread(os.path.join(os.getcwd(), 'input', 'testing_groundtruth.tif'))
+struct_arr = io.imread(os.path.join(os.getcwd(), 'input', 'test.tif'))
 
 struct_arr_transpose = struct_arr
 

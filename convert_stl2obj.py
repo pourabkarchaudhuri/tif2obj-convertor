@@ -2,7 +2,7 @@ import trimesh
 import os
 
 # Set Filepath
-FILE_NAME = "testing_groundtruth.stl"
+FILE_NAME = "test.stl"
 macro_name = FILE_NAME.split('.')
 EXPORT_FILENAME = macro_name[0] + ".obj"
 INPUT_PATH = os.path.join(os.getcwd(), "output", "stl", FILE_NAME)

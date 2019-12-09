@@ -20,9 +20,10 @@ import vtkplotter.vtkio as exp
 import os
 
 # Set Filepath
+
 INPUT_PATH = os.path.join(os.getcwd(), "input")
 EXPORT_PATH = os.path.join(os.getcwd(), "output")
-FILE_NAME = "testing_groundtruth.tif"
+FILE_NAME = "test.tif"
 FILE_PATH = os.path.join(INPUT_PATH, FILE_NAME)
 
 # Set Params

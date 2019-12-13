@@ -1,7 +1,15 @@
 import argparse
+import convert_tif2stl
+import convert_stl2obj
+import os
 
-def execute_job(filepath):
-    print("Found Input at : {}".format(filepath))
+def execute_job(path):
+    # print("Input at : {}".format(path))
+    STL_PATH = convert_tif2stl.convert(path)
+
+    OBJ_PATH = convert_stl2obj.convert(STL_PATH)
+    # print("Final .OBJ filename : {}".format(OBJ_PATH))
+    return
 
 
 if __name__ == '__main__':
@@ -10,5 +18,10 @@ if __name__ == '__main__':
     parser.add_argument('--path', required=True)
 
     args = parser.parse_args()
-    print(args.path)
-    execute_job(args.path)
+    if args.path == "":
+        print("Blank")
+    else:
+        print(args.path)
+        execute_job(args.path)
+    
+        print("Complete")

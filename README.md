@@ -2,8 +2,9 @@
 ##### A python based backend scripted pipeline to convert TIF to STL and OBJ
 &nbsp;
 
-![test](https://github.com/favicon.ico | width=48)
-![MESH](https://user-images.githubusercontent.com/32848391/50739035-6b2a7c80-11da-11e9-8687-4e4d46ff6df0.jpg)![MESH](https://user-images.githubusercontent.com/32848391/50739035-6b2a7c80-11da-11e9-8687-4e4d46ff6df0.jpg)
+
+![MESH](https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/input.gif)![MESH](https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/output.png)
+
 ## Description
 Medical Imaging Techniques export multiple formats, out of which a commonly used medical imaging document format is .TIF documents. These images are of two types, Sequence TIF and single TIF. This code base converts TIFs of any kind under 24bit compression to be converted into data arrays, and generates a 3D mesh out of it to be able to use it in Unity for XR project implementation.
 

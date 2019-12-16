@@ -1,13 +1,12 @@
 from PIL import Image
 import numpy, os
-
+import argparse
 import matplotlib.pyplot as plt
 from skimage import data
 from skimage import io
 import shutil
 import tempfile
 
-d = tempfile.mkdtemp()
 def remove_keymap_conflicts(new_keys_set):
     for prop in plt.rcParams:
         if prop.startswith('keymap.'):
@@ -43,14 +42,28 @@ def next_slice(ax):
     ax.index = (ax.index + 1) % volume.shape[0]
     ax.images[0].set_array(volume[ax.index])
 
-# Read the file
-struct_arr = io.imread(os.path.join(os.getcwd(), 'input', 'test.tif'))
+def execute_job(filepath):
+    # Read the file
+    d = tempfile.mkdtemp()
+    struct_arr = io.imread(os.path.join(os.getcwd(), filepath))
+    struct_arr_transpose = struct_arr
+    multi_slice_viewer(struct_arr)
 
-struct_arr_transpose = struct_arr
+    # Preview in 2D Stacked Plots
+    plt.show()
+    shutil.rmtree(d)
+    return
 
-multi_slice_viewer(struct_arr)
+if __name__ == '__main__':
 
-# Preview in 2D Stacked Plots
-plt.show()
+    parser = argparse.ArgumentParser(description='Visualuze TIF sequence')
+    parser.add_argument('--path', required=True)
 
-shutil.rmtree(d)
+    args = parser.parse_args()
+    if args.path == "":
+        print("Blank")
+    else:
+        print(args.path)
+        execute_job(args.path)
+    
+        print("Complete")

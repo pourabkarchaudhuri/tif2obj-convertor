@@ -5,7 +5,7 @@
 
 ![MESH](https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/input.gif)![MESH](https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/output.png)
 
-<img src="https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/output.png" width="300" height="600">
+<img src="https://raw.githubusercontent.com/pourabkarchaudhuri/tif2obj-convertor/master/documentation_assets/output.png" width="640" height="480">
 
 ## Description
 Medical Imaging Techniques export multiple formats, out of which a commonly used medical imaging document format is .TIF documents. These images are of two types, Sequence TIF and single TIF. This code base converts TIFs of any kind under 24bit compression to be converted into data arrays, and generates a 3D mesh out of it to be able to use it in Unity for XR project implementation.

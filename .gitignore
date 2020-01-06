@@ -1,3 +1,8 @@
 .vscode
 .env
 __pycache__
+input
+output
+raw
+dataset
+raw_grayscale

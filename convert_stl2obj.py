@@ -2,18 +2,18 @@ import trimesh
 import os
 import time
 start_time = time.time()
-# Set Filepath
-# FILE_NAME = "test.stl"
-# macro_name = FILE_NAME.split('.')
-# EXPORT_FILENAME = macro_name[0] + ".obj"
-# INPUT_PATH = os.path.join(os.getcwd(), "output", "stl", FILE_NAME)
-# EXPORT_PATH = os.path.join(os.getcwd(), "output", "obj", EXPORT_FILENAME)
-
-INPUT_PATH = os.path.join(os.getcwd(), "output", "stl")
-EXPORT_PATH = os.path.join(os.getcwd(), "output", "obj")
 
 def convert(filename):
+    # Set Filepath
+
+    EXPORT_PATH = os.path.join(os.getcwd(), "output", "obj")
+
+    if not os.path.exists(EXPORT_PATH):
+            os.makedirs(EXPORT_PATH)
+
+    INPUT_PATH = os.path.join(os.getcwd(), "output", "stl")
     start_time = time.time()
+    
 
     MESH_PATH = os.path.join(INPUT_PATH, filename)
 
@@ -21,7 +21,7 @@ def convert(filename):
 
     mesh1 = trimesh.load(MESH_PATH)
     mesh2 = mesh1.copy()
-    mesh2.apply_scale(1.1)
+    mesh2.apply_scale(0.4)
 
     macro_name = filename.split('.')
     output_name = macro_name[0] + ".obj"

@@ -3,12 +3,19 @@ import convert_tif2stl
 import convert_stl2obj
 import os
 
+
+
 def execute_job(path):
+    OUTPUT_EXPORT_PATH = os.path.join(os.getcwd(), 'output')
+
+    if not os.path.exists(OUTPUT_EXPORT_PATH):
+            os.makedirs(OUTPUT_EXPORT_PATH)
     # print("Input at : {}".format(path))
+    
     STL_PATH = convert_tif2stl.convert(path)
 
     OBJ_PATH = convert_stl2obj.convert(STL_PATH)
-    # print("Final .OBJ filename : {}".format(OBJ_PATH))
+    print("Final .OBJ filename : {}".format(OBJ_PATH))
     return
 
 

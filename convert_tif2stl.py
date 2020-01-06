@@ -20,8 +20,7 @@ import os
 import time
 # Set Filepath
 
-# INPUT_PATH = os.path.join(os.getcwd(), "input")
-EXPORT_PATH = os.path.join(os.getcwd(), "output")
+
 
 def timestamp():
     x = str(time.time())
@@ -30,6 +29,11 @@ def timestamp():
     return x
 
 def convert(path):
+    EXPORT_PATH = os.path.join(os.getcwd(), "output", "stl")
+
+    if not os.path.exists(EXPORT_PATH):
+            os.makedirs(EXPORT_PATH)
+    
     start_time = time.time()
     # print("Relative obtained {}".format(path))
     # FILE_NAME = "test.tif"
@@ -45,13 +49,18 @@ def convert(path):
     print("Loading TIF Stack")
     # vp1 = show(v, a, shape=(1, 2), axes=8, viewup='z')
     # save(a, "output.obj", binary=True)
+    full_filename = os.path.split(path)
+    only_filename = full_filename[len(full_filename)-1]
+
+    macro_name = only_filename.split('.')
+    output_name = macro_name[0]
 
     # Save Path
-    EXPORT_NAME = "job_tif2stl_" + timestamp() + ".stl"
+    EXPORT_NAME = output_name + ".stl"
     # macro_name = FILE_NAME.split('.')
     # EXPORT_NAME = macro_name[0] + ".stl"
-    EXPORT_FILE = os.path.join(EXPORT_PATH, "stl", EXPORT_NAME)
-    exp.write(a, EXPORT_FILE, binary=False)
+    EXPORT_FILE = os.path.join(EXPORT_PATH, EXPORT_NAME)
+    exp.write(a, EXPORT_FILE, binary=True)
     execution_time = (time.time() - start_time)
     print("Export to .STL completed")
     print("STL Generation Execution time : {0:.2f}s".format(round(execution_time,2)))

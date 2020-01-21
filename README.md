@@ -44,15 +44,22 @@ $ pip install -r requirements.txt
 ```sh
 $ python visualize_tif.py --path INPUT_FILE_PATH_HERE.tif
 ```
+#### Run TIF Stack creator from folder of multiple TIF images
+```sh
+$ python convert_image2tif.py --path INPUT_FOLDER_PATH_HERE
+```
+
 #### Run Mesh Generation Job using TIF Stack
 ```sh
 $ python trigger_job.py --path INPUT_FILE_PATH_HERE.tif
 ```
 
-#### Run TIF Stack creator from folder of multiple TIF images
+#### Run Mesh Decimation Code
+`Install` [Blender] `v2.7 and put it in system path  variables`
 ```sh
-$ python convert_image2tif.py --path INPUT_FILE_PATH_HERE.tif
+$ blender -b -P convert_obj_decimator -- --ratio [Between 0.1 to 0.9] --inm [INPUT_PATH_TO_3D_OBJ.obj] --outm [PATH_TO_SAVE_OBJ_OUTPUT.obj]
 ```
+
 #### For help with Command Line Arguements
 ```sh
 $ python trigger_job.py -h
@@ -72,4 +79,5 @@ Public
 
    [VTK]: <https://vtk.org/>
    [Python]: <https://www.python.org/>
+   [Blender]: <https://download.blender.org/release/Blender2.79/blender-2.79-windows64.msi>
   
